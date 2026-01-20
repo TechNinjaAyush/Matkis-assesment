@@ -3,10 +3,9 @@ package main
 import (
 	"fmt"
 	"log"
+	"matkis/api"
+	"matkis/db"
 	"os"
-
-	"matkis/backend/api"
-	"matkis/backend/db"
 
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
