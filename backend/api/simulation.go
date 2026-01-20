@@ -20,7 +20,7 @@ type RatingUpdate struct {
 var UpdateQueue = make(chan RatingUpdate, 100_000)
 
 func (h *Handler) SimulateMultiUserUpdates(c *gin.Context) {
-	ctx, cancel := context.WithTimeout(c.Request.Context(), 10*time.Second)
+	ctx, cancel := context.WithTimeout(c.Request.Context(), 30*time.Second)
 	defer cancel()
 
 	updates := 500

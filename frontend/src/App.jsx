@@ -5,7 +5,6 @@ const PAGE_SIZE = 20
 
 const  API_BASE =  import.meta.env.VITE_BACKEND_URL
 
-
 function App() {
   const [bootLoading, setBootLoading] = useState(false)
   const [bootMessage, setBootMessage] = useState('')
