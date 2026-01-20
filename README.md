@@ -187,13 +187,13 @@ export POSTGRES_URL="postgres://USER:PASS@HOST:5432/DB?sslmode=disable"
 export REDIS_URL="redis://localhost:6379/0"
 
 go run ./backend/cmd/server
-```
 
 Backend runs on `http://localhost:8080`.
 
 ### Deployed URLs (prod/staging)
-- **Backend**: `https://matkis-assesment-2.onrender.com`
-- **Frontend**: `https://starlit-kelpie-53985a.netlify.app/`
+- **Backend**: [https://matkis-assesment-2.onrender.com](https://matkis-assesment-2.onrender.com)
+- **Frontend**: [https://starlit-kelpie-53985a.netlify.app](https://starlit-kelpie-53985a.netlify.app)
+
 
 ### 2) Frontend
 In a second terminal:
