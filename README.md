@@ -190,9 +190,8 @@ go run ./backend/cmd/server
 
 Backend runs on `http://localhost:8080`.
 
-### Deployed URLs (prod/staging)
-- **Backend**: [https://matkis-assesment-2.onrender.com](https://matkis-assesment-2.onrender.com)
-- **Frontend**: [https://starlit-kelpie-53985a.netlify.app](https://starlit-kelpie-53985a.netlify.app)
+
+
 
 
 ### 2) Frontend
@@ -243,5 +242,10 @@ go build -ldflags="-s -w" -o server ./backend/cmd/server
 - The table name is `leadboard` (spelling) in SQL and APIs are `/api/leadboard` — keep consistent or rename across code + DB migration.
 - Consider removing debug `fmt.Printf` logs in hot paths.
 - Add authentication/rate limiting if this becomes public-facing.
+
+
+### 🌍 Deployed URLs
+- **Backend**: [Render](https://matkis-assesment-2.onrender.com)
+- **Frontend**: [Netlify](https://starlit-kelpie-53985a.netlify.app)
 
 
