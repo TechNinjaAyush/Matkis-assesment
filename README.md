@@ -179,7 +179,6 @@ Dev proxy is configured in Vite so the frontend can call `/api/*` without CORS i
 
 ## Running locally
 
-### 1) Backend
 From repo root:
 
 ```bash
@@ -206,6 +205,10 @@ npm run dev
 Open the Vite URL (usually `http://localhost:5173`).
 
 ---
+###3) React native 
+cd mobile 
+npm install
+npx expo start
 
 ## Building a backend binary
 
