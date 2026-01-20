@@ -3,6 +3,9 @@ import './App.css'
 
 const PAGE_SIZE = 20
 
+const  API_BASE =  import.meta.env.VITE_BACKEND_URL
+
+
 function App() {
   const [bootLoading, setBootLoading] = useState(false)
   const [bootMessage, setBootMessage] = useState('')
@@ -28,7 +31,7 @@ function App() {
         page: String(pageToLoad),
         limit: String(PAGE_SIZE),
       })
-      const res = await fetch(`/api/leadboard?${params.toString()}`)
+      const res = await fetch(`${API_BASE}/api/leadboard?${params.toString()}`)
       const data = await res.json().catch(() => [])
       if (!res.ok) {
         throw new Error(data.error || 'Failed to load leaderboard')
@@ -51,7 +54,7 @@ function App() {
       setBootMessage('')
       setError('')
 
-      const res = await fetch('/api/users', {
+      const res = await fetch(`${API_BASE}/api/users`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
       })
@@ -77,7 +80,7 @@ function App() {
       setSimMessage('')
       setError('')
 
-      const res = await fetch('/api/simulate', {
+      const res = await fetch(`${API_BASE}/api/simulate`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
       })
@@ -107,7 +110,7 @@ function App() {
       setError('')
       setShowSearchModal(true)
       const params = new URLSearchParams({ username: search.trim() })
-      const url = `/api/username?${params.toString()}`
+      const url = `${API_BASE}/api/username?${params.toString()}`
       
       const res = await fetch(url)
       
