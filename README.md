@@ -6,6 +6,7 @@ Build a **leaderboard** that can support **10,000 → 1,000,000 users**, with:
 - Fast username/prefix search
 - Frequent rating updates (“live” feel)
 - Durable storage for long-term correctness
+- Tie aware logic 
 
 This repo contains:
 - **Backend**: Go + Gin + Redis + Postgres
@@ -129,6 +130,15 @@ Rank is computed using Redis `ZCOUNT`:
 Concretely, for a user rating `r`, the backend does:
 - `ZCOUNT leaderboard (r +inf`  (strictly greater than `r`)
 - `rank = higherCount + 1`
+Example 
+| Username | Rating | Users Above | Rank |
+| -------- | ------ | ----------- | ---- |
+| alice    | 5000   | 0           | 1    |
+| bob      | 4800   | 1           | 2    |
+| carol    | 4800   | 1           | 2    |
+| dave     | 4500   | 3           | 4    | 
+
+
 
 ### Tradeoffs
 - **Pros**: simple and deterministic with “dense ranking” for identical scores.
@@ -139,6 +149,9 @@ Concretely, for a user rating `r`, the backend does:
     - Store a secondary tie-breaker (e.g., timestamp) if needed
 
 ---
+
+## Tie aware logic :  Same ranking for same rating 
+
 
 ## Simulation design
 
