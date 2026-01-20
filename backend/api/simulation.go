@@ -20,9 +20,7 @@ type RatingUpdate struct {
 var UpdateQueue = make(chan RatingUpdate, 100_000)
 
 func (h *Handler) SimulateMultiUserUpdates(c *gin.Context) {
-	ctx, cancel := context.WithTimeout(c.Request.Context(), 30*time.Second)
-	defer cancel()
-
+	ctx := context.Background()
 	updates := 500
 	pipe := h.Redis.Pipeline()
 
@@ -51,9 +49,13 @@ func (h *Handler) SimulateMultiUserUpdates(c *gin.Context) {
 			Member: username,
 		})
 
-		UpdateQueue <- RatingUpdate{
+		select {
+		case UpdateQueue <- RatingUpdate{
 			Username: username,
 			Rating:   newRating,
+		}:
+		default:
+			// avoid blocking
 		}
 
 	}
