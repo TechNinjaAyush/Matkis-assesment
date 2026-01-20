@@ -47,4 +47,15 @@ frontend/yarn-debug.log*
 frontend/yarn-error.log*
 frontend/pnpm-debug.log*
 
+# ---------- React Native / Expo (mobile) ----------
+mobile/node_modules/
+mobile/.expo/
+mobile/.expo-shared/
+mobile/dist/
+mobile/web-build/
+mobile/npm-debug.log*
+mobile/yarn-debug.log*
+mobile/yarn-error.log*
+mobile/pnpm-debug.log*
+
 
