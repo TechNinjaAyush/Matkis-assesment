@@ -247,5 +247,6 @@ go build -ldflags="-s -w" -o server ./backend/cmd/server
 ### 🌍 Deployed URLs
 - **Backend**: [Render](https://matkis-assesment-2.onrender.com)
 - **Frontend**: [Netlify](https://starlit-kelpie-53985a.netlify.app)
+- **Video** : [video](https://drive.google.com/file/d/1qYyFohfwe6YjOELLnkeVatndBTOr2s2s/view?usp=drive_link)
 
 
