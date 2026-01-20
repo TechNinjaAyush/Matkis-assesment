@@ -22,7 +22,8 @@ This repo contains:
 
 ---
 
-## High-level architecture
+## High-level architecture 
+
 
 ### Data model (conceptual)
 Each user has:
@@ -30,7 +31,7 @@ Each user has:
 - `rating`
 
 ### Storage responsibilities
-- **Postgres**: durable table (named `leadboard` in this project) stores `username`, `rating`, etc.
+- **Postgres**: durable table (named `leadboard` in this project) stores `username`, `rating`,`userid` etc.
 - **Redis**: optimized read/query structures:
   - **Sorted Set** `leaderboard`
     - Member: `username`
@@ -130,7 +131,8 @@ Rank is computed using Redis `ZCOUNT`:
 Concretely, for a user rating `r`, the backend does:
 - `ZCOUNT leaderboard (r +inf`  (strictly greater than `r`)
 - `rank = higherCount + 1`
-Example 
+Example :   
+
 | Username | Rating | Users Above | Rank |
 | -------- | ------ | ----------- | ---- |
 | alice    | 5000   | 0           | 1    |
